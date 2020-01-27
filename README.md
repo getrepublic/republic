@@ -2,7 +2,7 @@
 
 > Think of morality as fundamental and program as use.
 
-An experimental content management system and new idea playground.
+An experimental web framework and new idea playground.
 
 _**WIP**_
 
