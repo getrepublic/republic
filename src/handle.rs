@@ -1,5 +1,6 @@
-use crate::{RequestCtx, Response};
 use std::future::Future;
+
+use crate::{RequestCtx, Response};
 
 #[async_trait::async_trait]
 pub trait HTTPHandler: Send + Sync + 'static {

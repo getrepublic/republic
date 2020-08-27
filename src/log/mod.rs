@@ -1,2 +1,2 @@
-pub mod middleware;
-pub use middleware::AccessLog;
+mod middleware;
+pub use middleware::LogMiddleware;

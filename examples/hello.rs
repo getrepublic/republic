@@ -1,6 +1,6 @@
 use std::net::SocketAddr;
 
-use republic::{AccessLog, RequestCtx, Response, ResponseBuiler, Server};
+use republic::{LogMiddleware, RequestCtx, Response, ResponseBuiler, Server};
 use tracing::Level;
 use tracing_subscriber::FmtSubscriber;
 
@@ -19,7 +19,7 @@ async fn main() {
 
     let mut srv = Server::new();
 
-    srv.middleware(AccessLog);
+    srv.middleware(LogMiddleware);
 
     srv.get("/", |_req| async move {
         hyper::Response::builder()

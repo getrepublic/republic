@@ -7,8 +7,7 @@ use hyper::service::{make_service_fn, service_fn};
 use route_recognizer::{Params, Router as MethodRouter};
 
 use crate::{
-    Error, HTTPHandler, HyperRequest, Middleware, Next, RequestCtx, Response, ResponseBuiler,
-    Router,
+    Error, HTTPHandler, Middleware, Next, Request, RequestCtx, Response, ResponseBuiler, Router,
 };
 
 pub struct Server {
@@ -61,7 +60,7 @@ impl Server {
             let remote_addr = conn.remote_addr();
 
             async move {
-                Ok::<_, Infallible>(service_fn(move |req: HyperRequest| {
+                Ok::<_, Infallible>(service_fn(move |req: Request| {
                     let router = router.clone();
                     let middlewares = middlewares.clone();
 

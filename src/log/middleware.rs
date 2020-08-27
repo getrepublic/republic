@@ -1,10 +1,10 @@
 pub use crate::{Middleware, Next, RequestCtx, Response};
 use std::time::Instant;
 
-pub struct AccessLog;
+pub struct LogMiddleware;
 
 #[async_trait::async_trait]
-impl Middleware for AccessLog {
+impl Middleware for LogMiddleware {
     async fn handle<'a>(&'a self, ctx: RequestCtx, next: Next<'a>) -> Response {
         let start = Instant::now();
         let method = ctx.request.method().to_string();

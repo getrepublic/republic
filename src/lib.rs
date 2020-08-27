@@ -2,22 +2,22 @@
 extern crate tracing;
 
 #[macro_use]
-pub mod macros;
+mod macros;
 
-pub mod error;
-pub mod handle;
-pub mod log;
-pub mod middleware;
-pub mod request;
-pub mod response;
-pub mod router;
-pub mod server;
+mod error;
+mod handle;
+mod log;
+mod middleware;
+mod request;
+mod response;
+mod router;
+mod server;
 
 pub use error::Error;
 pub use handle::{BoxHTTPHandler, HTTPHandler};
-pub use log::AccessLog;
+pub use log::LogMiddleware;
 pub use middleware::{Middleware, Next};
-pub use request::{HyperRequest, RequestCtx};
+pub use request::{Request, RequestCtx};
 pub use response::{Response, ResponseBuiler};
 pub use router::Router;
 pub use server::Server;

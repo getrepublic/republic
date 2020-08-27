@@ -1,5 +1,6 @@
-use crate::{HTTPHandler, RequestCtx, Response};
 use std::sync::Arc;
+
+use crate::{HTTPHandler, RequestCtx, Response};
 
 #[async_trait::async_trait]
 pub trait Middleware: Send + Sync + 'static {
