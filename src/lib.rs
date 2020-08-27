@@ -1,4 +1,7 @@
 #[macro_use]
+extern crate tracing;
+
+#[macro_use]
 pub mod macros;
 
 pub mod error;

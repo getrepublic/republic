@@ -4,6 +4,9 @@ use std::sync::Arc;
 #[async_trait::async_trait]
 pub trait Middleware: Send + Sync + 'static {
     async fn handle<'a>(&'a self, ctx: RequestCtx, next: Next<'a>) -> Response;
+    fn name(&self) -> &str {
+        std::any::type_name::<Self>()
+    }
 }
 
 #[allow(missing_debug_implementations)]

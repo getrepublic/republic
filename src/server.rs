@@ -45,6 +45,7 @@ impl Server {
     register_method!(patch, "PATCH");
 
     pub fn middleware(&mut self, middleware: impl Middleware) {
+        trace!("Adding middleware {}", middleware.name());
         self.middlewares.push(Arc::new(middleware));
     }
 

@@ -11,7 +11,7 @@ impl Middleware for AccessLog {
         let path = ctx.request.uri().path().to_string();
         let remote_addr = ctx.remote_addr;
         let res = next.run(ctx).await;
-        println!(
+        info!(
             "{} {:?} {} {} {}ms",
             method,
             path,

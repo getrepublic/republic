@@ -18,9 +18,11 @@ include = [
 ]
 
 [dependencies]
-hyper = "0.13"
 async-trait = "0.1"
+hyper = "0.13"
 route-recognizer = "0.2"
+tracing = { version = "0.1", default-features = false, features = ["log", "std"] }
 
 [dev-dependencies]
 tokio = { version = "0.2.22", features = ["full"] }
+tracing-subscriber = "0.2.11"
