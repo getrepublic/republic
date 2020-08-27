@@ -7,7 +7,7 @@ description = "An experimental web framework and new idea playground."
 categories = ["web-programming::http-server"]
 keywords = ["republic", "framework", "web", "server"]
 license = "MIT/Apache-2.0"
-repository = "https://github.com/psiace/republic"
+repository = "https://github.com/getrepublic/republic"
 readme = "README.md"
 
 include = [
@@ -18,3 +18,9 @@ include = [
 ]
 
 [dependencies]
+hyper = "0.13"
+async-trait = "0.1"
+route-recognizer = "0.2"
+
+[dev-dependencies]
+tokio = { version = "0.2.22", features = ["full"] }
